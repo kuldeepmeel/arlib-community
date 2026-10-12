@@ -1,0 +1,1195 @@
+{
+  "schema": "tex2lean.paper-proof-map/1",
+  "ledgerId": "ledger:e6da9231-16d2-4038-b272-a9753ce511b5",
+  "paper": {
+    "id": "paper:572f81ce-0bb8-407c-8ebd-12cf4a41c1b4"
+  },
+  "target": {
+    "id": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+    "paperId": "paper:572f81ce-0bb8-407c-8ebd-12cf4a41c1b4",
+    "activeVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b"
+  },
+  "activeClaimSetReceiptId": "claim-set:d071c756-9e2c-4501-858c-6d0779178593",
+  "activeSurfaceInventoryId": "surface-inventory:195209cf-12c6-45c3-b80e-acde5072154f",
+  "targetVersions": [
+    {
+      "id": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "paperPacketDigest": "sha256-9826e567eda254666e6520c5ecffa1fc833d827b578ff19adcdc07bfc7ef717a",
+      "bodyDigest": "sha256-f8b7fcf26180f673ace0f1705bc63f32d6c25e849cbb1b7f69690eb20babb8ea",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "label": "thm:main",
+        "environment": "theorem",
+        "from": 501,
+        "to": 503,
+        "excerptDigest": "sha256-01568a8d3938fa3880b266123007a48828fc5a61a7ad6d15c40e9ab34ad436af"
+      },
+      "status": "active"
+    }
+  ],
+  "claims": [
+    {
+      "id": "claim:6b9dbdf3-6c83-4944-9ae5-7da1b9542366",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:5be9adba-1711-46d6-a963-e92823246a1d",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:a3e096d3-37c2-4adb-bcbf-a928da5074c2",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:5c3e8534-7833-4189-97ea-5811054d2483",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:035faa8b-2f78-4cde-b7ff-47010f0c57e6",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:02100f02-a0af-4066-a7b6-b3b982da02c2",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:89353059-a94c-4b3f-9db5-82034e06e08f",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:e41de8d5-3429-4161-9a07-5e61cd4933de",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:9119481e-4206-4f7a-b528-4d46b8dbf028",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:94e371c7-7272-45c0-b50b-2062629f9cdd",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:aa36a690-2e44-40b9-a07f-bdbf9196af48",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:92d31410-b556-4ffa-8e68-221dfeeddc72",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:04621583-db25-4d56-8afd-f11d16b94439",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:cde3a1ee-2e80-4473-9f17-704ee3b22ecf",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:5608e7eb-67b0-4297-94ba-fb2df1a80f77",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:52885e8d-24d0-436b-a45d-bf4dea106dc0",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:62c8f606-2823-4e56-82b6-13d826901e06",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:158d3af3-955e-49d3-a973-e0f060d4a956",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:27325c81-4555-492f-a4f7-87306b855475",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:130a5f5f-44d0-4ea7-8d14-e9ad5aaa4d6b",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:d6198366-61cb-4481-af2c-cec5b55afa2b",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:6e286c29-fe43-4a28-a2fc-97c8e77eeee1",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:12c6a263-9951-4b35-8e78-34041355e1d8",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:19f05038-024f-45a7-b4a5-bde188d0845b",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:e37d9db5-5388-49f3-9777-2de6369765b1",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:94c3a73a-e4fa-42ec-8ad5-a19e6faf02dc",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:b3b6bdfe-4b5e-4fa4-ac70-38237034e24d",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:10c6d50e-a345-445b-8150-058bf67ece89",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:66f1f0cc-4bf9-4338-b34c-a0213200719d",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:76eead01-31ff-4ed4-a202-7d11cce7a492",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:7b6f4fdd-46b1-434d-91b0-aaf37f8fc262",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:d35b554e-e0a5-4006-bece-207917645fbc",
+      "role": "reportable"
+    },
+    {
+      "id": "claim:94eeaa8c-409b-41fe-9bb8-e820efc86f1d",
+      "targetId": "target:d9c923ea-e1ed-490d-81d3-6e439d885fdc",
+      "activeVersionId": "claim-version:73c56c24-27eb-4084-ad4d-4fae3997fcaf",
+      "role": "reportable"
+    }
+  ],
+  "claimVersions": [
+    {
+      "id": "claim-version:5be9adba-1711-46d6-a963-e92823246a1d",
+      "claimId": "claim:6b9dbdf3-6c83-4944-9ae5-7da1b9542366",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "excerptDigest": "sha256-e7228bf734a6f86da0cc6f53c52a2cda4ce8d4b6166d15a3050e57fb9e722a14"
+      },
+      "text": "Accuracy: Pr[output ≠ ⊥ ∧ (1-ε)F0 ≤ output ≤ (1+ε)F0] ≥ 1-δ.",
+      "normalizedTextDigest": "sha256-d1cfde52817d41f99ad017998ecc63dbb3e6102eb9891b4fa2df3c516c2f87e9",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-e7228bf734a6f86da0cc6f53c52a2cda4ce8d4b6166d15a3050e57fb9e722a14"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:5c3e8534-7833-4189-97ea-5811054d2483",
+      "claimId": "claim:a3e096d3-37c2-4adb-bcbf-a928da5074c2",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "excerptDigest": "sha256-8abce17577a54b618fdb6d080eff750b407b71c00ef007cafb9fd0e672db2244"
+      },
+      "text": "Worst-case space: |X| ≤ thresh at every point of every run of Algorithm 1.",
+      "normalizedTextDigest": "sha256-54f11c9c68242a5d0d3a73c1cce2b9c5a3b6309ee0e0c43afffe0223be76244b",
+      "kind": "space",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-8abce17577a54b618fdb6d080eff750b407b71c00ef007cafb9fd0e672db2244"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:02100f02-a0af-4066-a7b6-b3b982da02c2",
+      "claimId": "claim:035faa8b-2f78-4cde-b7ff-47010f0c57e6",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "excerptDigest": "sha256-d23a4ca77664527bf7aa0610d21c20b798317dbdd991f5f7b2c21106bcf27b27"
+      },
+      "text": "Space in bits is O(ε^-2 · log n · (log m + log 1/δ)), via thresh · ⌈log₂ n⌉.",
+      "normalizedTextDigest": "sha256-ba7be46f061660fb3f6c902bb1a5befce3bc8d211364ae525efbd529e3dda69f",
+      "kind": "space",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-d23a4ca77664527bf7aa0610d21c20b798317dbdd991f5f7b2c21106bcf27b27"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:e41de8d5-3429-4161-9a07-5e61cd4933de",
+      "claimId": "claim:89353059-a94c-4b3f-9db5-82034e06e08f",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "excerptDigest": "sha256-472f7ddfa2cd034812d8236a8b1620a206ad2a47b745c1874c4cff9e8f59ee2d"
+      },
+      "text": "Expected running time O(m) (O(1) per element), absolute constant, under O(1)-cost dictionary operations.",
+      "normalizedTextDigest": "sha256-ea1d5522ad49b115a4a5be93a1a98bd500c0f7633c7c38bb0656de4abd9ab772",
+      "kind": "time",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-472f7ddfa2cd034812d8236a8b1620a206ad2a47b745c1874c4cff9e8f59ee2d"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:94e371c7-7272-45c0-b50b-2062629f9cdd",
+      "claimId": "claim:9119481e-4206-4f7a-b528-4d46b8dbf028",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 509,
+        "excerptDigest": "sha256-f976c331199066fa559455661c585a3b1c5bd6ae1e729d207feaeeca81328efb"
+      },
+      "text": "Every loop iteration costs O(1) except those executing line final-throw, which cost an additional O(thresh).",
+      "normalizedTextDigest": "sha256-cf3c202ab12b0d104ec8c0677bff0143bb27a5bd72b550d4c7af3f59e7032eac",
+      "kind": "time",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 509,
+          "excerptDigest": "sha256-f976c331199066fa559455661c585a3b1c5bd6ae1e729d207feaeeca81328efb"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:92d31410-b556-4ffa-8e68-221dfeeddc72",
+      "claimId": "claim:aa36a690-2e44-40b9-a07f-bdbf9196af48",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 511,
+        "excerptDigest": "sha256-1258d33843f911c3208c714590bf0c36a8790b199742985d60216e4aa1e5e307"
+      },
+      "text": "With T = number of throw executions, E[T] ≤ 2m/thresh (Wald: E[ΣR_j] = E[T]·thresh/2 and ΣR_j ≤ m).",
+      "normalizedTextDigest": "sha256-ebfe5eb1713ed614467f3057cfac8db11dd936b04b1afffbdc3b4b8918a6ce16",
+      "kind": "time",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 511,
+          "excerptDigest": "sha256-1258d33843f911c3208c714590bf0c36a8790b199742985d60216e4aa1e5e307"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:cde3a1ee-2e80-4473-9f17-704ee3b22ecf",
+      "claimId": "claim:04621583-db25-4d56-8afd-f11d16b94439",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 511,
+        "excerptDigest": "sha256-0e3c7e942ed7e3257f674d097ff123d7d922c8fe256eaec1119d9102590a6e31"
+      },
+      "text": "ΣR_j ≤ m on every run (X grows by at most one per iteration).",
+      "normalizedTextDigest": "sha256-4dc6888db7eccef0e0a7e2d3c715fceb3e7a768dc56d9bde9f0cd83cc2b0e8b4",
+      "kind": "resource",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 511,
+          "excerptDigest": "sha256-0e3c7e942ed7e3257f674d097ff123d7d922c8fe256eaec1119d9102590a6e31"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:52885e8d-24d0-436b-a45d-bf4dea106dc0",
+      "claimId": "claim:5608e7eb-67b0-4297-94ba-fb2df1a80f77",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 524,
+        "excerptDigest": "sha256-aa8d5787a69f56908c7e7b00a762db1e3225db2d874291e15558e305fcf14acf"
+      },
+      "text": "Pr[Error] ≤ Pr[Fail] + Pr[Error ∩ ¬Fail].",
+      "normalizedTextDigest": "sha256-cc3e084dd69547dbf1745956e3dec85f47988cdcd277a59a9c84c879d2533de1",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 524,
+          "excerptDigest": "sha256-aa8d5787a69f56908c7e7b00a762db1e3225db2d874291e15558e305fcf14acf"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:158d3af3-955e-49d3-a973-e0f060d4a956",
+      "claimId": "claim:62c8f606-2823-4e56-82b6-13d826901e06",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 527,
+        "to": 542,
+        "excerptDigest": "sha256-b8c8716730c4a105e2fbefd71dcaccc05ad56062ea20c9c55dd3c09bc32af254"
+      },
+      "text": "Claim lm:fail: Pr[Fail] ≤ δ/8 (union bound over j of Pr[Fail_j] ≤ 2^{-thresh}).",
+      "normalizedTextDigest": "sha256-745e2cadfcb4efa3dd52095e39b1138e2a6178a5357801756f02f5ce6b054cbf",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 527,
+          "to": 542,
+          "excerptDigest": "sha256-b8c8716730c4a105e2fbefd71dcaccc05ad56062ea20c9c55dd3c09bc32af254"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:130a5f5f-44d0-4ea7-8d14-e9ad5aaa4d6b",
+      "claimId": "claim:27325c81-4555-492f-a4f7-87306b855475",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 545,
+        "to": 562,
+        "excerptDigest": "sha256-cf9251386ab37b02ecb035fc055d5a01cb4dcb1183a08885e74cbbed4d2c9c81"
+      },
+      "text": "Claim claim:errfail: Pr[Error ∩ ¬Fail] ≤ δ/2, via Pr[Error ∩ ¬Fail] ≤ Pr[Error_2] for the relaxed Algorithm 2 (identical behaviour on ¬Fail).",
+      "normalizedTextDigest": "sha256-164fd55742f3a90ad64dc5c2823577f32dcd9132a22db5e712ef8ec797a1bce8",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 545,
+          "to": 562,
+          "excerptDigest": "sha256-cf9251386ab37b02ecb035fc055d5a01cb4dcb1183a08885e74cbbed4d2c9c81"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:6e286c29-fe43-4a28-a2fc-97c8e77eeee1",
+      "claimId": "claim:d6198366-61cb-4481-af2c-cec5b55afa2b",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 624,
+        "to": 678,
+        "excerptDigest": "sha256-5e67612ffd147b7790d4f516196288c52ce380972bee56ed7de6aaefa2025ae6"
+      },
+      "text": "Claim cl:loop: in Algorithm 3 every element of S_i is in Y_k independently with probability 2^{-k}.",
+      "normalizedTextDigest": "sha256-7df56d82b299d8a4830de7e7ec90a358e2e6c71a2dc1fd25f862d4df64c27c3e",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 624,
+          "to": 678,
+          "excerptDigest": "sha256-5e67612ffd147b7790d4f516196288c52ce380972bee56ed7de6aaefa2025ae6"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:19f05038-024f-45a7-b4a5-bde188d0845b",
+      "claimId": "claim:12c6a263-9951-4b35-8e78-34041355e1d8",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 684,
+        "excerptDigest": "sha256-3108559cb7d1500cb9abcda9060147ff7cc6dc1ef3b4d4b5cb396b403b8fa879"
+      },
+      "text": "Coupling: (p_j, X_j) of Algorithm 2 equals (p_j, Y_{k,j}) of Algorithm 3 when p_j = 2^{-k}; and p ≥ 2^{-m} always.",
+      "normalizedTextDigest": "sha256-b298949727c13d5343b154ef83e2a1ab3bc191de1b421d3b0a800beba737e963",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 684,
+          "excerptDigest": "sha256-3108559cb7d1500cb9abcda9060147ff7cc6dc1ef3b4d4b5cb396b403b8fa879"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:94c3a73a-e4fa-42ec-8ad5-a19e6faf02dc",
+      "claimId": "claim:e37d9db5-5388-49f3-9777-2de6369765b1",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 692,
+        "to": 697,
+        "excerptDigest": "sha256-d4ddbcf562f5d788eada807010b3fe6394311d0f5f8309c81bc55f7f9eae82c7"
+      },
+      "text": "Equation eq:Yellj: E|Y_{k,j}| = 2^{-k}|S_j| ≤ 2^{-k} F0.",
+      "normalizedTextDigest": "sha256-3864b5e0f3acabb52e33beaf44f644a4c200262caac483281155fe28c4face40",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 692,
+          "to": 697,
+          "excerptDigest": "sha256-d4ddbcf562f5d788eada807010b3fe6394311d0f5f8309c81bc55f7f9eae82c7"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:10c6d50e-a345-445b-8150-058bf67ece89",
+      "claimId": "claim:b3b6bdfe-4b5e-4fa4-ac70-38237034e24d",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 701,
+        "to": 781,
+        "excerptDigest": "sha256-2a32e0c45a76bacd7f3f96a2bab997f92226e0935e0db52459d0099e85e6a286"
+      },
+      "text": "Claim lm:error-fail: Pr[Error_2] ≤ δ/2, split as Pr[Bad_2] ≤ δ/4 and Pr[Error_2 ∩ ¬Bad_2] ≤ δ/4.",
+      "normalizedTextDigest": "sha256-89023503d19c8fc075ffc486cbb7a1951671c97f75b9423a691cdea7a8504290",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 701,
+          "to": 781,
+          "excerptDigest": "sha256-2a32e0c45a76bacd7f3f96a2bab997f92226e0935e0db52459d0099e85e6a286"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:76eead01-31ff-4ed4-a202-7d11cce7a492",
+      "claimId": "claim:66f1f0cc-4bf9-4338-b34c-a0213200719d",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 466,
+        "to": 469,
+        "excerptDigest": "sha256-33e85f6c8d96a7f4840d2fbf264727df3cc33b34ab3f16bcc7126b178c869605"
+      },
+      "text": "Chernoff Fact: for independent 0/1 variables with sum V and mean μ, Pr(|V-μ| ≥ βμ) ≤ 2e^{-β²μ/(2+β)}.",
+      "normalizedTextDigest": "sha256-9a36dbd69d590da1ef9063a48e887d7acfbc6cf3f3a735daf0ad90a03ce412b5",
+      "kind": "probability",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 466,
+          "to": 469,
+          "excerptDigest": "sha256-33e85f6c8d96a7f4840d2fbf264727df3cc33b34ab3f16bcc7126b178c869605"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:d35b554e-e0a5-4006-bece-207917645fbc",
+      "claimId": "claim:7b6f4fdd-46b1-434d-91b0-aaf37f8fc262",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "excerptDigest": "sha256-682aa4dba6a65dcdf7db016d01c45e4f7cbeac2e85844cf28de92b32fbc5b6cc"
+      },
+      "text": "X maintained in a dictionary with O(1) expected-time operations, |X| maintained alongside.",
+      "normalizedTextDigest": "sha256-7b1bdf83cf7b0a9db3e5a8814a3258e72e9734b3752dfd78a1ba049f07c09e34",
+      "kind": "other",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-682aa4dba6a65dcdf7db016d01c45e4f7cbeac2e85844cf28de92b32fbc5b6cc"
+        }
+      ],
+      "status": "active"
+    },
+    {
+      "id": "claim-version:73c56c24-27eb-4084-ad4d-4fae3997fcaf",
+      "claimId": "claim:94eeaa8c-409b-41fe-9bb8-e820efc86f1d",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "anchor": {
+        "file": "esa22-final.tex",
+        "from": 507,
+        "excerptDigest": "sha256-cbeb207c9bd6d8c3882c1e7740bd84754e43fdbe191f3dd8be2b909e8537873b"
+      },
+      "text": "Each stored item needs ⌈log₂ n⌉ bits.",
+      "normalizedTextDigest": "sha256-18531f1cd1d4163695f5cd27d054aecd4b12906f51be8755703b9d244a2999c3",
+      "kind": "space",
+      "evidence": [
+        {
+          "file": "esa22-final.tex",
+          "from": 507,
+          "excerptDigest": "sha256-cbeb207c9bd6d8c3882c1e7740bd84754e43fdbe191f3dd8be2b909e8537873b"
+        }
+      ],
+      "status": "active"
+    }
+  ],
+  "plans": [
+    {
+      "claimVersionId": "claim-version:5be9adba-1711-46d6-a963-e92823246a1d",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:df9ffaba-4d37-429e-89bd-3406023b4b5d"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-911ac7f8389c8a4b6958b44f2f379e78b3a181bf6eee316bf47e562201a803e2"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Theorem."
+    },
+    {
+      "claimVersionId": "claim-version:5c3e8534-7833-4189-97ea-5811054d2483",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:1629b1bb-17d4-4333-82a5-52306c70bce9"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-971f9124fbbe0414dfd9b553c4e8eab26d3f81c4ff84a303a1f0523ff1a006a7"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Theorem."
+    },
+    {
+      "claimVersionId": "claim-version:02100f02-a0af-4066-a7b6-b3b982da02c2",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:14495ec1-94f3-4073-9528-978eb0bcc661"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-79a675a5cdaf9471050d4995a44266d13f28791124a7092768d64a72a261914a"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Theorem."
+    },
+    {
+      "claimVersionId": "claim-version:e41de8d5-3429-4161-9a07-5e61cd4933de",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:b521cb66-6d89-46ea-a1de-4b52018ad851"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-ecdba8f9bae95b9aab15a7f66ffb55255e99a56922fedda07f7e47a7e82979dc"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Theorem."
+    },
+    {
+      "claimVersionId": "claim-version:94e371c7-7272-45c0-b50b-2062629f9cdd",
+      "disposition": "implement",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:91455bea-3137-4954-9ccf-43a6b1e05694"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-8bbdf8b5fa404bdd40c1be3cc37c2c2ae447fd8edc757252e28f718d435f1f65"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Program."
+    },
+    {
+      "claimVersionId": "claim-version:92d31410-b556-4ffa-8e68-221dfeeddc72",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:f1d74399-8dd6-4441-ad6a-c40471b926a3"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-d51a5f54a093c692b9c6e0f2b841b0d124b247d81a248a98914642cf98354637"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:cde3a1ee-2e80-4473-9f17-704ee3b22ecf",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:65ebbd99-ef95-41c5-952e-6b791dc3fe75"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-240a306e1f3037cdbd9e3dcff9c26a747b4d8c16abc93c210467ee8ed05e50b2"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:52885e8d-24d0-436b-a45d-bf4dea106dc0",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:1074f781-5a33-4f2e-9819-9c697073a767"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-302a636e7b4b307abb11ec42dcbcd04cd3fb3e3afeeb717b95617395fb3e7443"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:158d3af3-955e-49d3-a973-e0f060d4a956",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:09862142-3933-4728-8758-4dc6f4578107"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-95c9dc05a00cdd8461e449e3d9d51f11d92106674e6f80c2b717810ac55dc8c7"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:130a5f5f-44d0-4ea7-8d14-e9ad5aaa4d6b",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:f5b10fae-7fc7-42b7-8961-b6551ba8057e"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-79770777b4b8d53025c12974601e7cfcea3c56b995f4e4c47462d49b1cd7da2b"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:6e286c29-fe43-4a28-a2fc-97c8e77eeee1",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:882dc1e1-b334-493d-8a5b-e71d7892c29d"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-008a2539c098a2f060f6804e7f50fcbf432f4dfa5a8f224ac23e8b757ad05453"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:19f05038-024f-45a7-b4a5-bde188d0845b",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:a813dac7-6525-4258-b145-155e438461c0"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-9c3e35ef7e05514ffc02c3426defca4b8f43ce27fe7c2e31ecf097e3e2005ff4"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:94c3a73a-e4fa-42ec-8ad5-a19e6faf02dc",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:55f67af1-bba5-4838-9573-b293dcc2af47"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-b258520a5fec1721aee446ac210a9e1b095e62e4148d7a30a8590fd0b575d4f0"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:10c6d50e-a345-445b-8150-058bf67ece89",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:241b71ea-856c-4064-b34a-949d5b2dd444"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-fbdb387d0b9606e69a5822fb2f62b6a53186829c5b49027a0a87b4c6dfc77f06"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:76eead01-31ff-4ed4-a202-7d11cce7a492",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:4952edff-38d5-4b72-acd1-d6563bd9b729"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-ac20ddd806eea04b6202ec943831d59fbc62ca5a41bcde3b65ecbb6c70cfedbb"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Analysis."
+    },
+    {
+      "claimVersionId": "claim-version:d35b554e-e0a5-4006-bece-207917645fbc",
+      "disposition": "implement",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:1b406dfc-25d5-4413-b01e-5d10b188532e"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-f29d2d6cee09081de6a44b21aa010555aa024f290d69e9a57a71d652cbeee35b"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Model/Program."
+    },
+    {
+      "claimVersionId": "claim-version:73c56c24-27eb-4084-ad4d-4fae3997fcaf",
+      "disposition": "formalize",
+      "requirements": {
+        "allOf": [
+          {
+            "anyOf": [
+              "obligation:653a6a84-35da-4ce3-b9e6-d1406d294bbb"
+            ]
+          }
+        ]
+      },
+      "evidenceIds": [
+        "sha256-1e46da14d71aa52a9db350aaef4244b1468a9019e741cacfa9cd66cd1bae3fad"
+      ],
+      "reason": "Carried from the finalized blueprint claim ledger into Handoff."
+    }
+  ],
+  "obligations": [
+    {
+      "id": "obligation:df9ffaba-4d37-429e-89bd-3406023b4b5d",
+      "kind": "headline",
+      "summary": "Accuracy: Pr[output ≠ ⊥ ∧ (1-ε)F0 ≤ output ≤ (1+ε)F0] ≥ 1-δ.",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Theorem.",
+      "owner": "Model/Theorem",
+      "status": "materialized"
+    },
+    {
+      "id": "obligation:1629b1bb-17d4-4333-82a5-52306c70bce9",
+      "kind": "headline",
+      "summary": "Worst-case space: |X| ≤ thresh at every point of every run of Algorithm 1.",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Theorem.",
+      "owner": "Model/Theorem",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:14495ec1-94f3-4073-9528-978eb0bcc661",
+      "kind": "headline",
+      "summary": "Space in bits is O(ε^-2 · log n · (log m + log 1/δ)), via thresh · ⌈log₂ n⌉.",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Theorem.",
+      "owner": "Model/Theorem",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:b521cb66-6d89-46ea-a1de-4b52018ad851",
+      "kind": "headline",
+      "summary": "Expected running time O(m) (O(1) per element), absolute constant, under O(1)-cost dictionary operations.",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Theorem.",
+      "owner": "Model/Theorem",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:91455bea-3137-4954-9ccf-43a6b1e05694",
+      "kind": "implementation",
+      "summary": "Every loop iteration costs O(1) except those executing line final-throw, which cost an additional O(thresh).",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Program.",
+      "owner": "Model/Program",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:f1d74399-8dd6-4441-ad6a-c40471b926a3",
+      "kind": "headline",
+      "summary": "With T = number of throw executions, E[T] ≤ 2m/thresh (Wald: E[ΣR_j] = E[T]·thresh/2 and ΣR_j ≤ m).",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:65ebbd99-ef95-41c5-952e-6b791dc3fe75",
+      "kind": "headline",
+      "summary": "ΣR_j ≤ m on every run (X grows by at most one per iteration).",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:1074f781-5a33-4f2e-9819-9c697073a767",
+      "kind": "headline",
+      "summary": "Pr[Error] ≤ Pr[Fail] + Pr[Error ∩ ¬Fail].",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:09862142-3933-4728-8758-4dc6f4578107",
+      "kind": "headline",
+      "summary": "Claim lm:fail: Pr[Fail] ≤ δ/8 (union bound over j of Pr[Fail_j] ≤ 2^{-thresh}).",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:f5b10fae-7fc7-42b7-8961-b6551ba8057e",
+      "kind": "headline",
+      "summary": "Claim claim:errfail: Pr[Error ∩ ¬Fail] ≤ δ/2, via Pr[Error ∩ ¬Fail] ≤ Pr[Error_2] for the relaxed Algorithm 2 (identical behaviour on ¬Fail).",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:882dc1e1-b334-493d-8a5b-e71d7892c29d",
+      "kind": "headline",
+      "summary": "Claim cl:loop: in Algorithm 3 every element of S_i is in Y_k independently with probability 2^{-k}.",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:a813dac7-6525-4258-b145-155e438461c0",
+      "kind": "headline",
+      "summary": "Coupling: (p_j, X_j) of Algorithm 2 equals (p_j, Y_{k,j}) of Algorithm 3 when p_j = 2^{-k}; and p ≥ 2^{-m} always.",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:55f67af1-bba5-4838-9573-b293dcc2af47",
+      "kind": "headline",
+      "summary": "Equation eq:Yellj: E|Y_{k,j}| = 2^{-k}|S_j| ≤ 2^{-k} F0.",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:241b71ea-856c-4064-b34a-949d5b2dd444",
+      "kind": "headline",
+      "summary": "Claim lm:error-fail: Pr[Error_2] ≤ δ/2, split as Pr[Bad_2] ≤ δ/4 and Pr[Error_2 ∩ ¬Bad_2] ≤ δ/4.",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:4952edff-38d5-4b72-acd1-d6563bd9b729",
+      "kind": "headline",
+      "summary": "Chernoff Fact: for independent 0/1 variables with sum V and mean μ, Pr(|V-μ| ≥ βμ) ≤ 2e^{-β²μ/(2+β)}.",
+      "rationale": "The finalized blueprint assigns this paper claim to Analysis.",
+      "owner": "Analysis",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:1b406dfc-25d5-4413-b01e-5d10b188532e",
+      "kind": "implementation",
+      "summary": "X maintained in a dictionary with O(1) expected-time operations, |X| maintained alongside.",
+      "rationale": "The finalized blueprint assigns this paper claim to Model/Program.",
+      "owner": "Model/Program",
+      "status": "planned"
+    },
+    {
+      "id": "obligation:653a6a84-35da-4ce3-b9e6-d1406d294bbb",
+      "kind": "headline",
+      "summary": "Each stored item needs ⌈log₂ n⌉ bits.",
+      "rationale": "The finalized blueprint assigns this paper claim to Handoff.",
+      "owner": "Handoff",
+      "status": "planned"
+    }
+  ],
+  "bindings": [
+    {
+      "id": "binding:a42ccfeb-9a38-4ac9-94ab-008a02895bad",
+      "obligationId": "obligation:df9ffaba-4d37-429e-89bd-3406023b4b5d",
+      "declaration": "Esa22Copy.esa22copy_main",
+      "file": "Esa22Copy/Model/Theorem.lean",
+      "module": "Esa22Copy.Model.Theorem",
+      "role": "headline",
+      "status": "proposed"
+    }
+  ],
+  "leanRelations": [],
+  "claimSetReceipts": [
+    {
+      "id": "claim-set:d071c756-9e2c-4501-858c-6d0779178593",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "paperPacketDigest": "sha256-9826e567eda254666e6520c5ecffa1fc833d827b578ff19adcdc07bfc7ef717a",
+      "claimVersionIds": [
+        "claim-version:5be9adba-1711-46d6-a963-e92823246a1d",
+        "claim-version:5c3e8534-7833-4189-97ea-5811054d2483",
+        "claim-version:02100f02-a0af-4066-a7b6-b3b982da02c2",
+        "claim-version:e41de8d5-3429-4161-9a07-5e61cd4933de",
+        "claim-version:94e371c7-7272-45c0-b50b-2062629f9cdd",
+        "claim-version:92d31410-b556-4ffa-8e68-221dfeeddc72",
+        "claim-version:cde3a1ee-2e80-4473-9f17-704ee3b22ecf",
+        "claim-version:52885e8d-24d0-436b-a45d-bf4dea106dc0",
+        "claim-version:158d3af3-955e-49d3-a973-e0f060d4a956",
+        "claim-version:130a5f5f-44d0-4ea7-8d14-e9ad5aaa4d6b",
+        "claim-version:6e286c29-fe43-4a28-a2fc-97c8e77eeee1",
+        "claim-version:19f05038-024f-45a7-b4a5-bde188d0845b",
+        "claim-version:94c3a73a-e4fa-42ec-8ad5-a19e6faf02dc",
+        "claim-version:10c6d50e-a345-445b-8150-058bf67ece89",
+        "claim-version:76eead01-31ff-4ed4-a202-7d11cce7a492",
+        "claim-version:d35b554e-e0a5-4006-bece-207917645fbc",
+        "claim-version:73c56c24-27eb-4084-ad4d-4fae3997fcaf"
+      ],
+      "readerProvenance": "reader-agent"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "sha256-911ac7f8389c8a4b6958b44f2f379e78b3a181bf6eee316bf47e562201a803e2",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-e7228bf734a6f86da0cc6f53c52a2cda4ce8d4b6166d15a3050e57fb9e722a14"
+        }
+      ]
+    },
+    {
+      "id": "sha256-971f9124fbbe0414dfd9b553c4e8eab26d3f81c4ff84a303a1f0523ff1a006a7",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-8abce17577a54b618fdb6d080eff750b407b71c00ef007cafb9fd0e672db2244"
+        }
+      ]
+    },
+    {
+      "id": "sha256-79a675a5cdaf9471050d4995a44266d13f28791124a7092768d64a72a261914a",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-d23a4ca77664527bf7aa0610d21c20b798317dbdd991f5f7b2c21106bcf27b27"
+        }
+      ]
+    },
+    {
+      "id": "sha256-ecdba8f9bae95b9aab15a7f66ffb55255e99a56922fedda07f7e47a7e82979dc",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-472f7ddfa2cd034812d8236a8b1620a206ad2a47b745c1874c4cff9e8f59ee2d"
+        }
+      ]
+    },
+    {
+      "id": "sha256-8bbdf8b5fa404bdd40c1be3cc37c2c2ae447fd8edc757252e28f718d435f1f65",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 509,
+          "excerptDigest": "sha256-f976c331199066fa559455661c585a3b1c5bd6ae1e729d207feaeeca81328efb"
+        }
+      ]
+    },
+    {
+      "id": "sha256-d51a5f54a093c692b9c6e0f2b841b0d124b247d81a248a98914642cf98354637",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 511,
+          "excerptDigest": "sha256-1258d33843f911c3208c714590bf0c36a8790b199742985d60216e4aa1e5e307"
+        }
+      ]
+    },
+    {
+      "id": "sha256-240a306e1f3037cdbd9e3dcff9c26a747b4d8c16abc93c210467ee8ed05e50b2",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 511,
+          "excerptDigest": "sha256-0e3c7e942ed7e3257f674d097ff123d7d922c8fe256eaec1119d9102590a6e31"
+        }
+      ]
+    },
+    {
+      "id": "sha256-302a636e7b4b307abb11ec42dcbcd04cd3fb3e3afeeb717b95617395fb3e7443",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 524,
+          "excerptDigest": "sha256-aa8d5787a69f56908c7e7b00a762db1e3225db2d874291e15558e305fcf14acf"
+        }
+      ]
+    },
+    {
+      "id": "sha256-95c9dc05a00cdd8461e449e3d9d51f11d92106674e6f80c2b717810ac55dc8c7",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 527,
+          "to": 542,
+          "excerptDigest": "sha256-b8c8716730c4a105e2fbefd71dcaccc05ad56062ea20c9c55dd3c09bc32af254"
+        }
+      ]
+    },
+    {
+      "id": "sha256-79770777b4b8d53025c12974601e7cfcea3c56b995f4e4c47462d49b1cd7da2b",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 545,
+          "to": 562,
+          "excerptDigest": "sha256-cf9251386ab37b02ecb035fc055d5a01cb4dcb1183a08885e74cbbed4d2c9c81"
+        }
+      ]
+    },
+    {
+      "id": "sha256-008a2539c098a2f060f6804e7f50fcbf432f4dfa5a8f224ac23e8b757ad05453",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 624,
+          "to": 678,
+          "excerptDigest": "sha256-5e67612ffd147b7790d4f516196288c52ce380972bee56ed7de6aaefa2025ae6"
+        }
+      ]
+    },
+    {
+      "id": "sha256-9c3e35ef7e05514ffc02c3426defca4b8f43ce27fe7c2e31ecf097e3e2005ff4",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 684,
+          "excerptDigest": "sha256-3108559cb7d1500cb9abcda9060147ff7cc6dc1ef3b4d4b5cb396b403b8fa879"
+        }
+      ]
+    },
+    {
+      "id": "sha256-b258520a5fec1721aee446ac210a9e1b095e62e4148d7a30a8590fd0b575d4f0",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 692,
+          "to": 697,
+          "excerptDigest": "sha256-d4ddbcf562f5d788eada807010b3fe6394311d0f5f8309c81bc55f7f9eae82c7"
+        }
+      ]
+    },
+    {
+      "id": "sha256-fbdb387d0b9606e69a5822fb2f62b6a53186829c5b49027a0a87b4c6dfc77f06",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 701,
+          "to": 781,
+          "excerptDigest": "sha256-2a32e0c45a76bacd7f3f96a2bab997f92226e0935e0db52459d0099e85e6a286"
+        }
+      ]
+    },
+    {
+      "id": "sha256-ac20ddd806eea04b6202ec943831d59fbc62ca5a41bcde3b65ecbb6c70cfedbb",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 466,
+          "to": 469,
+          "excerptDigest": "sha256-33e85f6c8d96a7f4840d2fbf264727df3cc33b34ab3f16bcc7126b178c869605"
+        }
+      ]
+    },
+    {
+      "id": "sha256-f29d2d6cee09081de6a44b21aa010555aa024f290d69e9a57a71d652cbeee35b",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "excerptDigest": "sha256-682aa4dba6a65dcdf7db016d01c45e4f7cbeac2e85844cf28de92b32fbc5b6cc"
+        }
+      ]
+    },
+    {
+      "id": "sha256-1e46da14d71aa52a9db350aaef4244b1468a9019e741cacfa9cd66cd1bae3fad",
+      "kind": "source-reading",
+      "anchors": [
+        {
+          "file": "esa22-final.tex",
+          "from": 507,
+          "excerptDigest": "sha256-cbeb207c9bd6d8c3882c1e7740bd84754e43fdbe191f3dd8be2b909e8537873b"
+        }
+      ]
+    }
+  ],
+  "surfaceInventories": [
+    {
+      "id": "surface-inventory:195209cf-12c6-45c3-b80e-acde5072154f",
+      "targetVersionId": "target-version:505e88a6-e0d8-44bb-9997-951580537c4b",
+      "source": "sealed-blueprint",
+      "blueprintDigest": "sha256-a7537996e26e342b30c73e8eef3bb6c000478bb41323b7729bdf8252c43713f0",
+      "declarations": [
+        {
+          "declaration": "Esa22Copy.esa22copy_correct",
+          "role": "headline",
+          "file": "Esa22Copy/Model/Theorem.lean",
+          "module": "Esa22Copy.Model.Theorem"
+        },
+        {
+          "declaration": "Esa22Copy.esa22copy_space",
+          "role": "headline",
+          "file": "Esa22Copy/Model/Theorem.lean",
+          "module": "Esa22Copy.Model.Theorem"
+        },
+        {
+          "declaration": "Esa22Copy.esa22copy_space_bigO",
+          "role": "headline",
+          "file": "Esa22Copy/Model/Theorem.lean",
+          "module": "Esa22Copy.Model.Theorem"
+        },
+        {
+          "declaration": "Esa22Copy.esa22copy_time",
+          "role": "headline",
+          "file": "Esa22Copy/Model/Theorem.lean",
+          "module": "Esa22Copy.Model.Theorem"
+        },
+        {
+          "declaration": "Esa22Copy.esa22copy_main",
+          "role": "headline",
+          "file": "Esa22Copy/Model/Theorem.lean",
+          "module": "Esa22Copy.Model.Theorem"
+        }
+      ]
+    }
+  ],
+  "appliedDecisionIds": []
+}

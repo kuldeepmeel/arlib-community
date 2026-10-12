@@ -7,11 +7,3 @@ imports carries no deliberately-broken declarations.
 -/
 
 import Esa22CopyTest.CostSealBreaches
-import Esa22CopyTest.Breach.Exchange
-import Esa22CopyTest.Breach.Noncomputable
-import Esa22CopyTest.Breach.CasesOn
-import Esa22CopyTest.Breach.HandPriced
-import Esa22CopyTest.Breach.Cost
-import Esa22CopyTest.Breach.Transitive
-import Esa22CopyTest.Breach.Measure
-import Esa22CopyTest.Breach.PeakAt

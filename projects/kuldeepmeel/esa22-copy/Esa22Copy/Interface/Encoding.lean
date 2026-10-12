@@ -1,151 +1,152 @@
-import Esa22Copy.Model.Program
+import Esa22Copy.Model.Run
 
 /-!
-# Encoding: how the analysis reads Algorithm 1's sealed carriers
+# Encoding: the specification's handles on the F0-Estimator program
 
-Definitional glue between `Esa22Copy.Program` (Algorithm 1 over arlib's sealed
-carriers) and the proofs that will reason about it with `Finset`, `ℕ` and `PMF`.
-Every lemma here is `rfl`; anything that is not belongs in
-`Interface/ProgramModel.lean`.  Nothing here charges, nothing here is run, and
-no headline mentions any of it.
+`Model/Program.lean` writes Algorithm 1 (`algo:afinal`, esa22-final.tex:422-445)
+against arlib's sealed carriers and operation classes.  This file gives the
+proofs three kinds of handle on it, and nothing else.  Every lemma here is
+`rfl`; nothing here charges; no headline statement mentions anything here.
 
-## 1. The class indirection, collapsed
+## 1. Collapsing the class indirection
 
-The program is written against arlib's `RosterOps`/`RandOps`/`SlotOps`/
-`RosterCells` classes; `Model/Operations.lean` instantiates them at arlib's
-`StdOp` and `Cell`.  One `@[simp]` lemma per class turns `Roster.opcode StdOp o`,
-`randOpcode StdOp o`, `slotOpcode StdOp o` and `Roster.cell (Fin n)` into the
-constructors `StdOp.roster o`, `StdOp.rand o`, `StdOp.slot o` and `Cell.cell`.
+The program charges `Roster.opcode Op o` and `randOpcode Op o` and occupies
+`RosterCells.cell ι`; the statements and the cost bookkeeping speak of
+`StdOp.roster o`, `StdOp.rand o` and `Cell.roster`.  These are definitionally
+equal and not syntactically equal.  One `@[simp]` lemma per class the program
+uses — `RosterOps`, `RandOps`, `RosterCells` — and no more: the program uses no
+other carrier (no `Slot`, `Num`, `Dict`, …), and declares no currency of its own.
 
-## 2. The specification's views of a state
+## 2. The specification's views of a run
 
-| paper | view of `s : Program.State n` |
-|---|---|
-| the sample `X` | `sample s = s.X.toFinset` |
-| `p = 2⁻ᵏ` | `level s = s.rate.levelOf` (`p = 2^-(level s)`) |
-| "⊥ has not been output" | `running s = s.bot.get.isNone` |
+The program's state `Program.State α` holds a sealed `Roster α` and a sealed
+`Sampler`.  The analysis reasons about the set `𝒳` and the level `k` of
+`p = 2⁻ᵏ`, so `Snapshot` is that pair and `view` reads it off a state through
+arlib's specification-only accessors (`Roster.toFinset`, `Sampler.levelOf`).
+`view` is `noncomputable` on purpose: it is a reading for invariants, never a
+line of the algorithm.  `acceptsAt k b` is the outcome of the Bernoulli(`2⁻ᵏ`)
+draw of line `afinal-pick` stated through the block's bits; arlib's
+`Sampler.val_accept` asks each development for exactly this one-line bridge
+(`val_accept_eq`).
 
-The pick of line 4 reads the first `k` bits of the item's block: `pickAccepts k b`
-is that predicate, and `val_accept` is arlib's suggested one-line bridge to it
-(`Sampler.val_accept` is deliberately not `simp`).  The thinning coins of line 6
-are read through arlib's own `Coins.heads'` (`Coins.val_flip` is already `simp`).
+## 3. Handles on `Model/` subterms
 
-## 3. Handles on `Model/Program.lean` subterms
+* `loop thr s tape` — the `for i = 1 to m` fold inside `Program.estimate`,
+  before line `output`; `estimate_eq` splits `estimate` into `loop` then
+  `Program.report`.
+* `step_none`, `report_none` — the halting at `⊥` (line `fail`): after `none`
+  every later iteration and the report are `pure none`.
+* `report_some_val` — line `output`, `|𝒳|/p = |𝒳| · 2ᵏ`, read off a state.
 
-| paper (Algorithm 1) | handle |
-|---|---|
-| one pass of lines 3-8 on item `aᵢ` with its draw | `stepState thr s ad = (Program.step thr s ad).val` |
-| lines 2-10, from any state | `foldState thr l s` (`foldState_nil`, `foldState_cons`) |
-| the state after the loop, from line 1's state | `finalState thr A tape` |
-| line 11: `⊥` or `\|X\|/p = \|X\|·2ᵏ` | `answerOf s` |
+## Correspondence with the restatement's `algorithmTranscript`
 
-**Not stated here:** `(Program.estimator thr A tape).val = answerOf (finalState thr A tape)`.
-It is *not* `rfl` — `Charged.val` does not commute definitionally with the
-program's `if` on an opaque condition — so it is a claim, and belongs to
-`Interface/ProgramModel.lean` (it closes by unfolding, `rw [Charged.val_bind]`,
-`split`, `rw [Slot.val_isEmpty] at h`, then `if_pos`/`if_neg` and `rfl`).
+| transcript step | `Model/Program.lean` | handle here |
+|---|---|---|
+| input | `Program.estimate thr s tape` | `estimate_eq` |
+| init (`p ← 1`, `𝒳 ← ∅`) | `Program.initial` | `view_initial` |
+| init (`thresh`) | `Esa22Copy.thresh`, applied in `Esa22Copy.run` | — |
+| line:beginfor | `Charged.foldl (Program.step thr) (s.zip tape)` | `loop` |
+| line:afinal-drop | `Roster.erase` in `Program.arrival` | `rosterOps_charge` |
+| line:afinal-pick | `Sampler.accept`, `Roster.insert` in `Program.arrival` | `acceptsAt`, `val_accept_eq` |
+| line:Ifbegin (`|𝒳| = thresh`) | first `Roster.cardEq` in `Program.step` | — |
+| line:final-throw | `Program.thin` (`Roster.filterErase`, `Coins.flip`) | — |
+| line:p | `Sampler.halve` in `Program.step` | `randOps_charge` |
+| line:check / line:fail | second `Roster.cardEq`; `none` | `step_none`, `report_none` |
+| line:output | `Program.report` (`Roster.size`, `Sampler.inflate`) | `report_some_val` |
 
-`answerOf` reads `s.X.card` (the roster's own count, which is what
-`Roster.size` returns) rather than `(sample s).card`; the two agree by
-`Roster.card_toFinset`, which is a proof and so not stated here.
-
-The order of lines inside `Program.step` (unconditional erase, pick, first
-`cardEq`, thinning, halving, second `cardEq`, ⊥) is the transcript's
-(esa22-final.tex:422-445); this file does not restate it — that is the bridge
-in `Interface/ProgramModel.lean`.
+No mismatch between the transcript and `Model/Program.lean` was found: the line
+order drop → pick → test → throw → halve → test is the program's, both tests
+are equalities, the throw tosses one coin per element of `𝒳`, and `⊥` halts
+(as an `Option`-carrying accumulator on which every later step is `pure none`).
 -/
 
 set_option autoImplicit false
 
 namespace Esa22Copy.Interface
 
-open Arlib.Computation
+open Arlib.Computation (Roster RosterOp RosterOps RosterCells RandOp RandOps StdOp Block
+  Sampler Charged)
+open Esa22Copy.Model.Operations (Op Cell)
 
-/-! ## 1. Class collapse -/
+/-! ## 1. Collapsing the class indirection -/
 
-/-- A roster operation charges `StdOp.roster`. -/
-@[simp] theorem rosterOps_charge (o : RosterOp) :
-    (RosterOps.charge o : StdOp) = StdOp.roster o := rfl
+/-- The program's roster opcodes are arlib's standard `StdOp.roster`. -/
+@[simp] theorem rosterOps_charge (o : RosterOp) : (RosterOps.charge o : Op) = StdOp.roster o :=
+  rfl
 
-/-- A randomness operation charges `StdOp.rand`. -/
-@[simp] theorem randOps_charge (o : RandOp) :
-    (RandOps.charge o : StdOp) = StdOp.rand o := rfl
+/-- The program's randomness opcodes are arlib's standard `StdOp.rand`. -/
+@[simp] theorem randOps_charge (o : RandOp) : (RandOps.charge o : Op) = StdOp.rand o :=
+  rfl
 
-/-- A register operation charges `StdOp.slot`. -/
-@[simp] theorem slotOps_charge (o : SlotOp) :
-    (SlotOps.charge o : StdOp) = StdOp.slot o := rfl
-
-/-- Every element of a roster occupies the one `Cell`. -/
+/-- An element of the sample set occupies one `Cell.roster`. -/
 @[simp] theorem rosterCells_cell (ι : Type) :
-    (RosterCells.cell ι : Cell) = Cell.cell := rfl
+    (RosterCells.cell ι : Cell) = Arlib.Computation.Cell.roster :=
+  rfl
 
-/-! ## 2. Views -/
+/-! ## 2. The specification's views of a run -/
 
-section Views
+/-- **What the analysis sees of the algorithm's state**: the sample set `𝒳` and
+the level `k` of the sampling rate `p = 2⁻ᵏ`. -/
+structure Snapshot (α : Type) where
+  /-- The sample set `𝒳`. -/
+  sample : Finset α
+  /-- The level `k`, with `p = 2⁻ᵏ`. -/
+  level : ℕ
 
-variable {n : ℕ}
+variable {α : Type} [DecidableEq α] {w : ℕ}
 
-/-- The sample `X` held by a state.  **Specification-only.** -/
-noncomputable def sample (s : Program.State n) : Finset (Fin n) := s.X.toFinset
+/-- **The specification-only reading of a program state.** -/
+noncomputable def view (st : Program.State α) : Snapshot α :=
+  ⟨st.samples.toFinset, st.sampler.levelOf⟩
 
-/-- The level `k` of the sampling rate `p = 2⁻ᵏ` of a state.
-**Specification-only.** -/
-noncomputable def level (s : Program.State n) : ℕ := s.rate.levelOf
+@[simp] theorem view_sample (st : Program.State α) :
+    (view st).sample = st.samples.toFinset := rfl
 
-/-- Whether the run is still going: ⊥ has not been output.
-**Specification-only.** -/
-noncomputable def running (s : Program.State n) : Bool := s.bot.get.isNone
+@[simp] theorem view_level (st : Program.State α) :
+    (view st).level = st.sampler.levelOf := rfl
 
-@[simp] theorem sample_init : sample (Program.init : Program.State n) = ∅ := rfl
+/-- Line init: `𝒳 = ∅`, `p = 1`. -/
+@[simp] theorem view_initial : view (Program.initial : Program.State α) = ⟨∅, 0⟩ := rfl
 
-@[simp] theorem level_init : level (Program.init : Program.State n) = 0 := rfl
+/-- **The outcome of the Bernoulli(`2⁻ᵏ`) draw** of line `afinal-pick` against a
+block `b`: its first `k` bits are all one.  `false` if the block is shorter than
+`k` (arlib's junk value; the analysis must show `k ≤ w` at every draw). -/
+noncomputable def acceptsAt (k : ℕ) (b : Block w) : Bool :=
+  if k ≤ w then ((List.ofFn b.get).take k).all id else false
 
-@[simp] theorem running_init : running (Program.init : Program.State n) = true := rfl
+/-- The bridge arlib's `Sampler.val_accept` asks for: a draw against a sampler
+at level `k` is `acceptsAt k`. -/
+@[simp] theorem val_accept_eq {κ κₛ : Type} [DecidableEq κ] [RandOps κ] (b : Block w)
+    (s : Sampler) : (Sampler.accept b s : Charged κ κₛ Bool).val = acceptsAt s.levelOf b :=
+  rfl
 
-end Views
+/-! ## 3. Handles on `Model/` subterms -/
 
-/-- The outcome of a Bernoulli(`2⁻ᵏ`) pick read off a block of `L` fair bits: the
-first `k` bits are all one (`false` when `k > L`). -/
-noncomputable def pickAccepts {L : ℕ} (k : ℕ) (b : Block L) : Bool :=
-  if k ≤ L then ((List.ofFn b.get).take k).all id else false
+/-- **The loop `for i = 1 to m`** of `Program.estimate`, before line `output`:
+the final state, or `none` if the run output `⊥`. -/
+noncomputable def loop (thr : ℕ) (s : List α) (tape : List (Program.Randomness α w)) :
+    Charged Op Cell (Option (Program.State α)) :=
+  Charged.foldl (Program.step thr) (s.zip tape) (some Program.initial)
 
-/-- What `Sampler.accept` returns, as `pickAccepts` at the sampler's level. -/
-@[simp] theorem val_accept {κ κₛ : Type} [DecidableEq κ] [RandOps κ] {L : ℕ}
-    (b : Block L) (r : Sampler) :
-    (Sampler.accept b r : Charged κ κₛ Bool).val = pickAccepts r.levelOf b := rfl
+/-- `Program.estimate` is `loop` followed by `Program.report`. -/
+theorem estimate_eq (thr : ℕ) (s : List α) (tape : List (Program.Randomness α w)) :
+    Program.estimate thr s tape = loop thr s tape >>= Program.report :=
+  rfl
 
-/-! ## 3. Handles on the program -/
+/-- **Halting at `⊥`**: once a run has output `⊥`, an iteration does nothing. -/
+@[simp] theorem step_none (thr : ℕ) (ar : α × Program.Randomness α w) :
+    Program.step thr none ar = pure none :=
+  rfl
 
-section Handles
+omit [DecidableEq α] in
+/-- A run that output `⊥` reports `⊥`, at no cost. -/
+@[simp] theorem report_none : Program.report (α := α) none = pure none :=
+  rfl
 
-variable {n L : ℕ}
-
-/-- One iteration of the loop (lines 3-8), as a state transition. -/
-noncomputable def stepState (thr : ℕ) (s : Program.State n) (ad : Fin n × Program.Draw n L) :
-    Program.State n :=
-  (Program.step thr s ad).val
-
-/-- The loop run over the items-with-draws `l`, starting from `s`, as a state. -/
-noncomputable def foldState (thr : ℕ) (l : List (Fin n × Program.Draw n L))
-    (s : Program.State n) : Program.State n :=
-  (Charged.foldl (Program.step thr) l s).val
-
-@[simp] theorem foldState_nil (thr : ℕ) (s : Program.State n) :
-    foldState (L := L) thr [] s = s := rfl
-
-@[simp] theorem foldState_cons (thr : ℕ) (ad : Fin n × Program.Draw n L)
-    (l : List (Fin n × Program.Draw n L)) (s : Program.State n) :
-    foldState thr (ad :: l) s = foldState thr l (stepState thr s ad) := rfl
-
-/-- The state after the loop of Algorithm 1 on `A`, reading draw `i` at item `i`. -/
-noncomputable def finalState (thr : ℕ) (A : List (Fin n)) (tape : List (Program.Draw n L)) :
-    Program.State n :=
-  foldState thr (A.zip tape) Program.init
-
-/-- Line 11: ⊥ if it was output, `|X| · 2ᵏ` otherwise. -/
-noncomputable def answerOf (s : Program.State n) : Option ℕ :=
-  if running s then some (s.X.card * 2 ^ level s) else none
-
-end Handles
+omit [DecidableEq α] in
+/-- **Line output**: a surviving run reports `|𝒳| · 2ᵏ`. -/
+@[simp] theorem report_some_val (st : Program.State α) :
+    (Program.report (some st)).val = some (st.samples.card * 2 ^ st.sampler.levelOf) :=
+  rfl
 
 end Esa22Copy.Interface

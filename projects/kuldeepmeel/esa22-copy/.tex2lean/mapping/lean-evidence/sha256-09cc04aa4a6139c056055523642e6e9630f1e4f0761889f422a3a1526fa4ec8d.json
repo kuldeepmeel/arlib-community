@@ -1,0 +1,169 @@
+{
+  "schema": "tex2lean.lean-evidence/1",
+  "sourceFingerprint": "sha256:354290796368be07b8dbce09be4f98295ed70e65e287b5139c66006e49872069",
+  "buildFingerprint": "sha256:354290796368be07b8dbce09be4f98295ed70e65e287b5139c66006e49872069",
+  "dependencyFingerprint": "sha256:354290796368be07b8dbce09be4f98295ed70e65e287b5139c66006e49872069",
+  "toolchainDigest": "sha256-edce9c835ba8fd16fe32ec9b058ad81953b387a35723e2b323136c37f33fd4fa",
+  "interfaceReceipts": [
+    {
+      "bindingId": "binding:a42ccfeb-9a38-4ac9-94ab-008a02895bad",
+      "declaration": "Esa22Copy.esa22copy_main",
+      "receiptDigest": "sha256-ac6df4e652fdbc01907100343efdbc3dbe4e58c32bef147518ffa4f88fd1057a",
+      "receipt": {
+        "sourceSignatureDigest": "sha256-b9ec60808ec29ad2ec75c989c6479b2fbbcdd14b5249c22a2fb49a2dfb5fbda8",
+        "elaboratedTypeDigest": "sha256-ea51a9dc79e79fbd04b84d8419b0ef33c5c1c98fb45cf5115f3be2aa3150f228",
+        "semanticRootPolicyId": "project-type-closure/1",
+        "semanticRootDigests": [
+          {
+            "declaration": "Esa22Copy.Accurate",
+            "valueDigest": "sha256-df8ff3261958569a95085630f5c5d358bbacd5fb4f73e429608adece0d55f1a6"
+          },
+          {
+            "declaration": "Esa22Copy.Accurate.match_1",
+            "valueDigest": "sha256-181bfb71275c97dbb9e69b28c546f56415250f20abb95e647bb72748535469f8"
+          },
+          {
+            "declaration": "Esa22Copy.bitsPerItem",
+            "valueDigest": "sha256-0db135ad81d741e024938d5751a1f5a8748eab6ca41ae8a3710a1f4778742ca7"
+          },
+          {
+            "declaration": "Esa22Copy.cellLaw",
+            "valueDigest": "sha256-351a2322e12c046d5ca64927e98f54cef8a51a3180d8f5c8ec86a55f6f36c115"
+          },
+          {
+            "declaration": "Esa22Copy.cellLaw._proof_1",
+            "valueDigest": "sha256-7f42a8e79fee6837eb74fbf341ceea1765326a92ec80289e120b47829b123246"
+          },
+          {
+            "declaration": "Esa22Copy.cellLaw._proof_2",
+            "valueDigest": "sha256-276ee3b8c497f88b540fec6552efe6d4962ac98a5cb3dafb0a75a3168d9f30b0"
+          },
+          {
+            "declaration": "Esa22Copy.expectedSteps",
+            "valueDigest": "sha256-624c3c740ba4f41b43db943b5fc81787073130e2633567f6df38b38827760373"
+          },
+          {
+            "declaration": "Esa22Copy.F0",
+            "valueDigest": "sha256-01c524105ac4889dee244fb0e213c7572e3cc88c5c7bf33ffec63dc80a387098"
+          },
+          {
+            "declaration": "Esa22Copy.Model.Operations.Cell",
+            "valueDigest": "sha256-7c326caa01ad6eac086966abd96a56e507bb831e8f26ffea9d0fb8ee693ef24f"
+          },
+          {
+            "declaration": "Esa22Copy.Model.Operations.Op",
+            "valueDigest": "sha256-b349786e1bfba57791b065afb775e4abbbaf961944646c548a588fd353db54fe"
+          },
+          {
+            "declaration": "Esa22Copy.Model.Operations.rate",
+            "valueDigest": "sha256-98465efc2acf2a71952a83d91230921a2f9d8b3da1bcf0b5761af07ab4c8fda5"
+          },
+          {
+            "declaration": "Esa22Copy.output",
+            "valueDigest": "sha256-4360961057059111292895edc952ddc85f947fba21af50bdd785ca8e6b13ade0"
+          },
+          {
+            "declaration": "Esa22Copy.Prior",
+            "valueDigest": "sha256-8270c749c4061fb506f86b7895c581d87d0ccc0c4d5c22eafafaa3f9693f7f06"
+          },
+          {
+            "declaration": "Esa22Copy.Program.arrival",
+            "valueDigest": "sha256-8220d3c1a5c2ca0140265117fd5eb34c352f263b31c5850e78b8d3c189e302d4"
+          },
+          {
+            "declaration": "Esa22Copy.Program.estimate",
+            "valueDigest": "sha256-ea3435c1e0f4cd29e43bf5ef4d03dffe89f2c5063a08e1cee98d4cc64c9c60b2"
+          },
+          {
+            "declaration": "Esa22Copy.Program.initial",
+            "valueDigest": "sha256-dd459604a558c047ad44fdf792fe3ae6f0f3f235cfc2bfa16156d6825829de09"
+          },
+          {
+            "declaration": "Esa22Copy.Program.Randomness",
+            "valueDigest": "sha256-44657106b21d4d4e593a098802bf2cefb75eae173c1ce7578f7318d90ae84c2a"
+          },
+          {
+            "declaration": "Esa22Copy.Program.Randomness.bits",
+            "valueDigest": "sha256-a454fc114590b023ced277e3c5407c59250744e6687e23ca1062daeb02684184"
+          },
+          {
+            "declaration": "Esa22Copy.Program.Randomness.coins",
+            "valueDigest": "sha256-668371f7edcbf269ec56f7af4b3cacca5d2901a932ae85137590d833303884cf"
+          },
+          {
+            "declaration": "Esa22Copy.Program.Randomness.mk",
+            "valueDigest": "sha256-d1ab5a56e6471863590145e29c5cfa3063e00c4e9c0675084acafd87882272c6"
+          },
+          {
+            "declaration": "Esa22Copy.Program.report",
+            "valueDigest": "sha256-7d468b9d3a340c4e127cb18c354345083016228427e6bdbd64048a23b5a0f4a3"
+          },
+          {
+            "declaration": "Esa22Copy.Program.State",
+            "valueDigest": "sha256-823c5cfd9a859a215db3fcfd0181fe40d293352da6414b17d9f30d1f1c13ec50"
+          },
+          {
+            "declaration": "Esa22Copy.Program.State.mk",
+            "valueDigest": "sha256-56e70531656e23392899a44e17e0fc2e632e02baf015fd7c39bc8cdee9fe4215"
+          },
+          {
+            "declaration": "Esa22Copy.Program.State.sampler",
+            "valueDigest": "sha256-8d4235451933cc2f6388e176d188bee43466c0602e03a7b4f4325b7b55715ef4"
+          },
+          {
+            "declaration": "Esa22Copy.Program.State.samples",
+            "valueDigest": "sha256-e48895df7792a515d77815b35842e575dd10209dfa5dc6574149f58e0817894b"
+          },
+          {
+            "declaration": "Esa22Copy.Program.step",
+            "valueDigest": "sha256-c9d072bc34a65d41245157860c12e3fff37386abd48db44da8fd955386d918ad"
+          },
+          {
+            "declaration": "Esa22Copy.Program.step.match_1",
+            "valueDigest": "sha256-72876a636c948760606c176bc9c545737c002afce3c51c06713772bb3f401796"
+          },
+          {
+            "declaration": "Esa22Copy.Program.thin",
+            "valueDigest": "sha256-4177ff2bed9b18d8665ae24d895333a569b3c47fd8d7a0f075f8065fa2371dd3"
+          },
+          {
+            "declaration": "Esa22Copy.run",
+            "valueDigest": "sha256-5dedd708f283577d12e9954436ce32935a23cb57f764d3ce684c04f167b5e4d3"
+          },
+          {
+            "declaration": "Esa22Copy.tape",
+            "valueDigest": "sha256-34ab419406045226842aa279672aa9bfd9dbc087024bd56525e2fd602077976c"
+          },
+          {
+            "declaration": "Esa22Copy.tape._f",
+            "valueDigest": "sha256-75e3ebc463f6dc495794c4abfa1b08f4d0cfae6215f24ec6fe6ee749f64db4bf"
+          },
+          {
+            "declaration": "Esa22Copy.tape.match_1",
+            "valueDigest": "sha256-847b5bb19ce50a9a7a141fc54ea8f5cd8052f9c73c1a7f9410f1bab5d9425448"
+          },
+          {
+            "declaration": "Esa22Copy.thresh",
+            "valueDigest": "sha256-b1a3352a99e3d493556c20cdae9e0e2572254b79079a975a419fbdc2fc4897e9"
+          },
+          {
+            "declaration": "Esa22Copy.thresh._proof_1",
+            "valueDigest": "sha256-f2974cfd227df122242b8384bb428081b0332511d7a78b947898730e7d1f25fd"
+          },
+          {
+            "declaration": "Esa22Copy.thresh._proof_2",
+            "valueDigest": "sha256-fe61b37ab6b3af63f326a18386656bd0e872f1cca0d45aa2af09fdb11952576c"
+          },
+          {
+            "declaration": "Esa22Copy.thresh._proof_3",
+            "valueDigest": "sha256-c72b56af6f60400ee652943b51438d1c09906249f48188afc5e2b271d06b55c0"
+          }
+        ],
+        "leanVersion": "4.33.0",
+        "toolchainDigest": "sha256-edce9c835ba8fd16fe32ec9b058ad81953b387a35723e2b323136c37f33fd4fa",
+        "optionsDigest": "sha256-b01d333a0ba6076a37c01762a8978eb2d2bebd220d8530e524078067d340079e"
+      }
+    }
+  ],
+  "relationEvidence": []
+}

@@ -12,11 +12,14 @@ quantifiers, hypotheses, conclusion, and any definitions it uses. In particular,
 look for assumptions that narrow the claim or change the meaning of an input.
 Then follow the definitions into the other `Model/` files that are present:
 
-- `Prelude.lean` and `ProblemSetting.lean` define the objects and setting.
-- `Prior.lean` records assumptions or results taken from earlier work.
-- `Operations.lean` names any project-specific operations and their costs.
-- `Program.lean` or `Pseudocode.lean` describes the algorithm.
-- `Run.lean` describes how randomized runs are sampled.
+<!-- tex2lean:model-files:start -->
+- [`Esa22Copy/Model/Prelude.lean`](Esa22Copy/Model/Prelude.lean) defines the shared vocabulary.
+- [`Esa22Copy/Model/Prior.lean`](Esa22Copy/Model/Prior.lean) records assumptions or results taken from earlier work.
+- [`Esa22Copy/Model/Operations.lean`](Esa22Copy/Model/Operations.lean) names project-specific operations and their costs.
+- [`Esa22Copy/Model/Program.lean`](Esa22Copy/Model/Program.lean) describes the algorithm.
+- [`Esa22Copy/Model/Run.lean`](Esa22Copy/Model/Run.lean) describes how randomized runs are sampled.
+- [`Esa22Copy/Model/Theorem.lean`](Esa22Copy/Model/Theorem.lean) states the project's headline results.
+<!-- tex2lean:model-files:end -->
 
 The particular files depend on the project. Compare their definitions with the
 paper, especially the algorithm, probability distribution, and cost model when
@@ -56,7 +59,7 @@ lake build
 
 Toolchain: `leanprover/lean4:v4.33.0`. Configured Mathlib revision:
 `v4.33.0`. Configured arlib revision:
-`main`.
+`6262f60ad7556be62e94e87f6b5811cf299e7d94`.
 
 After building, inspect any errors or warnings, including declarations that use
 `sorry`. For each headline theorem in `Esa22Copy/Model/Theorem.lean`, use

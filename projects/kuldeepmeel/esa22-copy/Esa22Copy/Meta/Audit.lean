@@ -10,9 +10,10 @@ development does so the model-closure report sees the declarations available at
 that boundary.
 -/
 import Esa22Copy.Meta.ModelClosure
-import Esa22Copy.Analysis.PreludeProof
-import Esa22Copy.Analysis.TheoremCorrectProof
-import Esa22Copy.Analysis.TheoremSpaceProof
+import Esa22Copy.Analysis.AccuracyProof
+import Esa22Copy.Analysis.SpaceBitsProof
+import Esa22Copy.Analysis.SpaceProof
+import Esa22Copy.Analysis.TimeProof
 import Esa22Copy.Interface.Encoding
 import Esa22Copy.Interface.ProgramModel
 import Esa22Copy.Interface.Pseudocode
@@ -22,9 +23,10 @@ import Esa22Copy.Model.Prior
 import Esa22Copy.Model.Program
 import Esa22Copy.Model.Run
 import Esa22Copy.Model.Theorem
+import Tex2Lean.RecoveryRequestsV1
 
 namespace Esa22Copy.Meta
 
-#surplusIn Esa22Copy.Model from Esa22Copy.f0Estimator_main
+#surplusIn Esa22Copy.Model from Esa22Copy.esa22copy_main
 
 end Esa22Copy.Meta

@@ -1,34 +1,41 @@
 import Arlib.Computation.Std
 
 /-!
-# Operations: the currency Algorithm 1 is charged in
+# Operations: what one charged step of the F0-Estimator is
 
-**Arlib already has every primitive the paper uses**, so this file is an alias
-layer over arlib's standard currency and declares no operation of its own.
+**Outcome: arlib already has every primitive the paper uses**, so this file is
+an alias layer over arlib's standard currency and declares no operation of its
+own.
 
-Every line of Algorithm 1 (F0-Estimator, esa22-final.tex:422-445) is one of
-arlib's sealed-carrier operations:
+Every line of Algorithm 1 (esa22-final.tex:422-445) that does work is one of
+arlib's sealed operations:
 
 | paper line | arlib operation | opcode |
 |---|---|---|
-| 3: `X ← X \ {aᵢ}` | `Roster.erase` | `StdOp.roster .erase` |
-| 4: with probability `p`, … | `Sampler.accept` on a `Block` | `StdOp.rand .accept` |
-| 4: … `X ← X ∪ {aᵢ}` | `Roster.insert` | `StdOp.roster .insert` |
-| 5, 8: `if \|X\| = thresh` | `Roster.cardEq` | `StdOp.roster .cardEq` |
-| 6: throw away each element w.p. ½ | `Roster.filterErase` + `Coins.flip` | `.roster .erase`, `.rand .flip` |
-| 7: `p ← p/2` | `Sampler.halve` | `StdOp.rand .halve` |
-| 8: `Output ⊥` (and halting) | `Slot.fill`, `Slot.isEmpty` | `StdOp.slot .fill`, `.slot .test` |
-| 11: `Output \|X\|/p` | `Roster.size`, `Sampler.inflate` | `.roster .size`, `.rand .inflate` |
+| `X ← X ∖ {aᵢ}` (afinal-drop) | `Roster.erase` | `StdOp.roster .erase` |
+| with prob. `p`, `X ← X ∪ {aᵢ}` (afinal-pick) | `Sampler.accept`, `Roster.insert` | `.rand .accept`, `.roster .insert` |
+| `if |X| = thresh` (Ifbegin, check) | `Roster.cardEq` | `.roster .cardEq` |
+| throw each element w.p. ½ (final-throw) | `Roster.filterErase` with `Coins.flip` | one `.rand .flip` per element of `X`, one `.roster .erase` per discarded element |
+| `p ← p/2` (line p) | `Sampler.halve` | `.rand .halve` |
+| `Output |X|/p` (output) | `Roster.size`, `Sampler.inflate` | `.roster .size`, `.rand .inflate` |
 
-**Storage.**  One storage kind, `Arlib.Computation.Cell.cell`: every element of
-the sample `X` (a `Roster`) occupies one cell, through arlib's
-`stdRosterCells`.  The sampler, the coins and the ⊥ register report no cells, so
-the peak in this kind is the peak of `|X|` — exactly what the paper's space claim
-counts (esa22-final.tex:507).  Bits are `cells · ⌈log₂ n⌉`, a conversion outside
-the program; the level of `p` and the loop counter are not counted, as in the
-paper.
+**The cost model** (`rate`): every opcode costs one step.  This is how the
+paper's hypothesis — `𝒳` is kept in a dictionary with `O(1)` expected-time
+membership, insertion and deletion, and `|𝒳|` is maintained alongside `𝒳`
+(esa22-final.tex:502, 509) — is realised: as a deterministic unit price per
+dictionary operation.  It is a **model gap**, recorded as such: the hash table's
+own randomness is not modelled, and arlib's `StdImpl` interface deliberately
+cannot express an expected-time implementation.  The throw at line
+`final-throw` is *not* one paid token: `Roster.filterErase` charges one coin per
+element it visits, i.e. `|𝒳| = thresh` at that point, which is the paper's
+`O(thresh)` (esa22-final.tex:509).  The Bernoulli(`2⁻ᵏ`) draw `Sampler.accept` is
+one operation by arlib's declared price (the standard "sampling a geometric
+variable is unit cost" assumption, Arlib/Computation/Rand.lean).
 
-No running-time claim is made by the paper, so no rate is exported.
+**The storage kind**: an element of the sample set occupies one `Cell.roster`
+(arlib's `stdRosterCells`).  The registers holding the level of `p`, `|𝒳|` and
+the loop index are not counted, exactly as in the paper's proof
+(esa22-final.tex:507).
 -/
 
 set_option autoImplicit false
@@ -37,12 +44,15 @@ namespace Esa22Copy.Model
 
 namespace Operations
 
-/-- The work currency: arlib's standard operations on rosters, randomness and
-the answer register. -/
+/-- The work currency: arlib's standard operations. -/
 abbrev Op : Type := Arlib.Computation.StdOp
 
-/-- The storage currency: one kind, a cell of the sample `X`. -/
+/-- The storage currency: arlib's standard cell kinds.  Sample-set elements
+occupy `Arlib.Computation.Cell.roster`. -/
 abbrev Cell : Type := Arlib.Computation.Cell
+
+/-- The price list: every operation costs one step. -/
+abbrev rate : Arlib.Computation.Rate Op := Arlib.Computation.Rate.unit Op
 
 end Operations
 

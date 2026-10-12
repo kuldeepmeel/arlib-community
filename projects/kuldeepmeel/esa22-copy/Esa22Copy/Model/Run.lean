@@ -1,85 +1,78 @@
+import Mathlib.Probability.Distributions.Uniform
 import Esa22Copy.Model.Prelude
 import Esa22Copy.Model.Program
-import Esa22Copy.Meta.ModelClosure
-import Arlib.Computation.ChargedPMF
-import Mathlib.Probability.Distributions.Uniform
-import Mathlib.Data.Fintype.Powerset
 
 /-!
-# Run: where Algorithm 1's coins come from
+# Run: where the F0-Estimator's coins come from
 
-`Esa22Copy.Program.estimator` takes its randomness as an argument and computes.
-This file says how that argument is drawn, and nothing else.
+`Esa22Copy.Program.estimate` takes its randomness as an argument and computes.
+This file says how that randomness is drawn, and nothing else.
 
-* `drawLaw n L` — one iteration's randomness: a uniform block of `L` fair bits
-  for the pick (line 4), and, **independently**, a uniform subset of `Fin n` as
-  the thinning coins (line 6) — a uniform subset is exactly one independent fair
-  coin per element.
-* `tapeLaw n L k` — `k` independent draws, written by recursion so the
-  successor case unfolds definitionally to "one fresh draw, then the rest".
-* `run A ε δ` — the law of the charged execution of Algorithm 1 on `A`, with the
-  threshold instantiated at exactly `thresh ε δ A.length`.  Accuracy is read off
-  `output`; worst-case space is read off this same object by `worstSpace`.
-* `output A ε δ` — the law of what the algorithm returns (`none` = ⊥).
+* `cellLaw n w` — one tape cell: a uniform block of `w` fair bits (the paper's
+  `GenerateRandomBits`, esa22-final.tex:618) for the Bernoulli(`p`) pick, and an
+  independent uniform subset of `Fin n` as the throw's coins — a uniform subset is
+  exactly one independent fair coin per element.
+* `tape n w k` — `k` independent cells, written **by recursion** so that the
+  `cons` case unfolds definitionally: cross-iteration independence of the coins
+  is a fact about this definition, not an assertion beside it.
+* `run ε δ s` — the algorithm as a `PMF` of charged computations.  The accuracy,
+  space and time claims are three operators applied to this one object.
+* `output ε δ s` — its output distribution, `Charged.val` pushed forward.
 
-## Decisions made here
+**The tape length.**  `run` draws `tape n (s.length + 1) s.length`: exactly one
+cell per stream element.  `Program.estimate` loops over `s.zip tape`, which
+truncates to the shorter list, so this choice is what makes the loop visit every
+stream element; nothing else in `Model/` states that the two lengths agree.
+Every cell is drawn even if its coins are never read (the throw does not run, or
+the run has already output `⊥`), which does not change the law of what is read.
 
-* **Tape length = `A.length`.**  The program pairs item `i` with draw `i` by
-  `A.zip tape`; a shorter tape would silently truncate the run and a longer one
-  would leave draws unread.  Drawing exactly `A.length` cells makes the pairing
-  total: every item gets its own fresh draw.
-* **Block length = `A.length + 1`** (as in Algorithm 3, esa22-final.tex:589).
-  `Sampler.accept` at level `k` on a block of length `L` is Bernoulli(`2⁻ᵏ`) only
-  when `k ≤ L` (it returns `false` otherwise).  The level rises at most once per
-  item, so before item `i` it is at most `i - 1 < A.length + 1`; the block is long
-  enough on every reachable state.  (Proof obligation for `Analysis/`.)
-* **Fresh, independent coins per iteration.**  Each cell is drawn independently
-  of the others, and inside a cell the pick bits and the thinning coins are
-  drawn independently.  Thinning coins are drawn every iteration and read only
-  when thinning happens; unread coins do not change the law of the run.
-* **No `Nonempty (Fin n)` is needed**: the uniform laws are over `Fin L → Bool`
-  and `Finset (Fin n)`, both nonempty for every `n`, so the headline covers
-  `n = 0` (which forces `A = []`).
+**The block width.**  Each block has `s.length + 1` bits, the paper's
+`GenerateRandomBits(m+1)`.  The level `k` of `p = 2⁻ᵏ` rises at most once per
+iteration, so at the pick of iteration `i` it is `≤ i - 1 < m + 1`, and the draw
+reads a true Bernoulli(`2⁻ᵏ`).  That invariant is a proof obligation for the
+analysis, not a hypothesis.
+
+**The threshold.**  `run` applies `Esa22Copy.thresh ε δ s.length` itself, so the
+headline theorems are about Algorithm 1 with the paper's `thresh`, not about a
+family of programs indexed by a free threshold.
+
+The stream is an argument fixed before any coin is drawn: the adversary is
+oblivious (esa22-final.tex:502, "for any data stream").
 -/
 
 set_option autoImplicit false
 
-noncomputable section
-
 namespace Esa22Copy
 
-open Arlib.Computation
-open Esa22Copy.Model
+open Arlib.Computation (Block Coins Charged)
+open Esa22Copy.Model.Operations (Op Cell)
 
-/-- **One iteration's randomness**: `L` fair bits for the pick and, independently,
-one fair coin per element of `Fin n` for the thinning pass. -/
-def drawLaw (n L : ℕ) : PMF (Program.Draw n L) :=
-  (PMF.uniformOfFintype (Fin L → Bool)).bind fun bits =>
-    (PMF.uniformOfFintype (Finset (Fin n))).bind fun heads =>
-      PMF.pure ⟨Block.ofFun bits, Coins.ofFinset heads⟩
+/-- **One cell of randomness**: a uniform `Fin w → Bool` sealed as a `Block w`,
+and an independent uniform `Finset (Fin n)` sealed as the coins (heads = kept). -/
+noncomputable def cellLaw (n w : ℕ) : PMF (Program.Randomness (Fin n) w) :=
+  (PMF.uniformOfFintype (Fin w → Bool)).bind fun f =>
+    (PMF.uniformOfFintype (Finset (Fin n))).map fun S =>
+      ⟨Block.ofFun f, Coins.ofFinset S⟩
 
-/-- **The tape**: `k` independent draws of `drawLaw n L`. -/
-def tapeLaw (n L : ℕ) : ℕ → PMF (List (Program.Draw n L))
+/-- **The tape**: `k` independent cells, each drawn by `cellLaw n w`. -/
+noncomputable def tape (n w : ℕ) : ℕ → PMF (List (Program.Randomness (Fin n) w))
   | 0 => PMF.pure []
-  | k + 1 => (drawLaw n L).bind fun d => (tapeLaw n L k).map fun t => d :: t
+  | k + 1 => (cellLaw n w).bind fun c => (tape n w k).map fun t => c :: t
 
-/-- **Algorithm 1 run on `A` with parameters `ε, δ`**, as a distribution over
-charged executions: threshold `thresh ε δ A.length`, one fresh draw per item,
-pick blocks of length `A.length + 1`. -/
-def run {n : ℕ} (A : List (Fin n)) (ε δ : ℝ) :
-    PMF (Charged Operations.Op Operations.Cell (Option ℕ)) :=
-  (tapeLaw n (A.length + 1) A.length).map
-    (Program.estimator (thresh ε δ A.length) A)
+/-- **The F0-Estimator, run**: Algorithm 1 on stream `s` with the paper's
+threshold `thresh ε δ m`, reading a tape of `m` cells of `m + 1`-bit blocks,
+where `m = s.length`. -/
+noncomputable def run {n : ℕ} (ε δ : ℝ) (s : List (Fin n)) :
+    PMF (Charged Op Cell (Option ℕ)) :=
+  (tape n (s.length + 1) s.length).map
+    (Program.estimate (thresh ε δ s.length) s)
 
-/-- **What Algorithm 1 returns**: `none` for ⊥, `some (|X|·2ᵏ)` otherwise. -/
-def output {n : ℕ} (A : List (Fin n)) (ε δ : ℝ) : PMF (Option ℕ) :=
-  (run A ε δ).map Charged.val
+/-- **What the F0-Estimator outputs**: `none` for `⊥`, `some (|𝒳| · 2ᵏ)` for
+`|𝒳|/p`. -/
+noncomputable def output {n : ℕ} (ε δ : ℝ) (s : List (Fin n)) : PMF (Option ℕ) :=
+  (run ε δ s).map Charged.val
 
 end Esa22Copy
 
-end
-
-#modelClosure Esa22Copy.drawLaw
-#modelClosure Esa22Copy.tapeLaw
 #modelClosure Esa22Copy.run
 #modelClosure Esa22Copy.output
