@@ -1,0 +1,16 @@
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "Cellcounting.fpras_accurate",
+    "Cellcounting.fpras_zero_of_infeasible",
+    "Cellcounting.fpras_nonneg",
+    "Cellcounting.fpras_time",
+    "Cellcounting.cellcounting_fpras"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}

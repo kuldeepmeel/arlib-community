@@ -1,0 +1,32 @@
+import Cellcounting.Meta.CostSeal
+import Arlib.Computation.Charged
+import Arlib.Computation.Roster
+import Arlib.Computation.Rand
+import Arlib.Computation.Slot
+import Arlib.Computation.Std
+
+/-!
+# `#programSeal` breach: Exchange
+
+One planted breach per module.  `#programSeal` accepts only the canonical
+namespace `Cellcounting.Program`, so the cheats can no longer be kept apart by
+namespace inside one file; a module of their own is what keeps each expected
+message a single entry and each test independent of the others.  Nothing may
+import this module: it plants a declaration in the program's namespace.
+-/
+
+open Arlib.Computation
+
+/-! **Laundering a tally through a change of currency.**  `exchange` is
+computable and takes a `Charged` to a `Charged`, so nothing the compiler checks
+stands in the way; at a rate of zero it re-prices any computation at nothing. -/
+namespace Cellcounting.Program
+def cheat (p : Charged StdOp Cell Nat) : Charged StdOp Cell Nat :=
+  Charged.exchange (fun _ => (0 : CostVec StdOp)) p
+end Cellcounting.Program
+
+/--
+error: Seal breach in Cellcounting.Program: [(Cellcounting.Program.cheat, Arlib.Computation.Charged.exchange)].  A program that reads a dictionary without a charged operation, or that is marked noncomputable, can perform work it does not pay for.
+-/
+#guard_msgs (whitespace := lax) in
+#programSeal Cellcounting.Program

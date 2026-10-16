@@ -1,0 +1,48 @@
+{
+  "schema": "tex2lean.comparator/1",
+  "sourceProject": "/Users/kmeel8/research/meelgroup-projects/test/cellcounting/lean",
+  "capstone": "Cellcounting.cellcounting_fpras",
+  "theoremFile": "Cellcounting/Model/Theorem.lean",
+  "theoremNames": [
+    "Cellcounting.fpras_accurate",
+    "Cellcounting.fpras_zero_of_infeasible",
+    "Cellcounting.fpras_nonneg",
+    "Cellcounting.fpras_time",
+    "Cellcounting.cellcounting_fpras"
+  ],
+  "typeHashes": {
+    "Cellcounting.fpras_accurate": "a8c44654f9404ed05b4799bf35c948fce4eab9c86fd1b1d6b8768da26a87e76a",
+    "Cellcounting.fpras_zero_of_infeasible": "1aa9cea16182a5df14dcfd69a5613c4370b6c86dbb1ad89ead1f6250c41c2e1c",
+    "Cellcounting.fpras_nonneg": "a6ee9542cc8e62aee7b4d5625bd2f5b4c6383f134249fad0bf528db05918a835",
+    "Cellcounting.fpras_time": "61c6aa2d9c2b885ccfaa13ddba18353d465889b1f3fcc0764944b6034b5cf9e1",
+    "Cellcounting.cellcounting_fpras": "b670cd102ff9c3bc75dd6d600270d7e5d4118bda1eecd7d786165042a9384ca6"
+  },
+  "trustedSources": {
+    "Cellcounting/Model/Prelude.lean": "c2b84f77c5b84d041b84f701975e529ad7f2c880b3cff51618474d450f01b500",
+    "Cellcounting/Model/Operations.lean": "40c1b6bf36c0bc5969554b7e94fa09e0b185a417b8d482f77e2537e3005aeeea",
+    "Cellcounting/Meta/CostSeal.lean": "9f95e191ec17f9682fc029e230089534a5081a48ea7f611d15aa1ae135e81806",
+    "Cellcounting/Meta/ModelClosure.lean": "12c936badbd3b0439bc28e81feb1cf46a2e3d2328e6774e4f375724afdfd70de",
+    "Cellcounting/Model/Program.lean": "6dca7ab0199c6ae83fbcc52d9fbfd32a4898cfd14f4d94fe38796fc1e9a6df72",
+    "Cellcounting/Model/Run.lean": "220fc27f736b762cf49e6115bca9c3d516ff2b10897dc79a6eb1de1869d699b4",
+    "Cellcounting/Model/Prior.lean": "e4b1193d36336c65f819d7e1b9a2764763d954a83f4f70cd44f4cec5672c3ae7",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lakefile.toml": "edca2b2e62bb2f35ce3dd844197a5b20ad523c57f957bf1399d865cdbc37bf0a",
+    "lake-manifest.json": "6ee9fdedc9ca71ea6ba7c4ab2c1f97def1fd814fd2e6fd545a79ddf2dd35e4d1"
+  },
+  "baselineFiles": {
+    "Cellcounting/Model/Prelude.lean": "c2b84f77c5b84d041b84f701975e529ad7f2c880b3cff51618474d450f01b500",
+    "Cellcounting/Model/Operations.lean": "40c1b6bf36c0bc5969554b7e94fa09e0b185a417b8d482f77e2537e3005aeeea",
+    "Cellcounting/Meta/CostSeal.lean": "9f95e191ec17f9682fc029e230089534a5081a48ea7f611d15aa1ae135e81806",
+    "Cellcounting/Meta/ModelClosure.lean": "12c936badbd3b0439bc28e81feb1cf46a2e3d2328e6774e4f375724afdfd70de",
+    "Cellcounting/Model/Program.lean": "6dca7ab0199c6ae83fbcc52d9fbfd32a4898cfd14f4d94fe38796fc1e9a6df72",
+    "Cellcounting/Model/Run.lean": "220fc27f736b762cf49e6115bca9c3d516ff2b10897dc79a6eb1de1869d699b4",
+    "Cellcounting/Model/Prior.lean": "e4b1193d36336c65f819d7e1b9a2764763d954a83f4f70cd44f4cec5672c3ae7",
+    "lean-toolchain": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+    "lakefile.toml": "0e0e2a07fe9d06d85de283b5319757335343057a1dc3ffbe88af556eb8092e71",
+    "lake-manifest.json": "6ee9fdedc9ca71ea6ba7c4ab2c1f97def1fd814fd2e6fd545a79ddf2dd35e4d1",
+    "Challenge.lean": "70bb97bc5b847cd97572c016bbd8a35d7e102f3b93dfa4fba0be35278a27cf3e",
+    "Solution.lean": "b8ca93c0fcef09e58ad592a83573f599e2f3017db71396ee208ef576e59c21e9",
+    "comparator.json": "01e059a440c298984f95ff22eb9b2145380ccf6e3d3b18dbb46d077895a7cc8f",
+    "verify.sh": "786fa25ca1266d4e0ed8db57ac6c53b1872a21b2dee2fe89364f7110d2fd30c4"
+  }
+}

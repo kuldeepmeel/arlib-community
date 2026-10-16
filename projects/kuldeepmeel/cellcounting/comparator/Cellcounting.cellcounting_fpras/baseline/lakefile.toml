@@ -1,0 +1,43 @@
+name = "cellcounting"
+defaultTargets = ["Cellcounting", "CellcountingTest"]
+
+# Pinned so a fresh clone builds without a version hunt. If you bump the
+# toolchain in lean-toolchain, bump both revs below to match.
+#
+# Run `lake exe cache get` after `lake update` — otherwise you compile
+# Mathlib from source, which takes hours.
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "d13f23b723b8a846827a245b89c10fc7d3f11612"
+
+# Reusable, problem-independent material (finite probability, multiplicative
+# error algebra, automata lower bounds, MDPs, …) lives here. Look for a lemma
+# in arlib before proving it in this project.
+[[require]]
+name = "arlib"
+git = "file:///Users/kmeel8/research/meelgroup-projects/formalize-everything/.worktree/church-turing-341/.local-deps/arlib-4.34.1"
+rev = "d212595017a0bd8688c02a9f4d67a63da5b5ce5c"
+
+[[lean_lib]]
+name = "Cellcounting"
+
+[[lean_lib]]
+name = "CellcountingTest"
+# The root module and every module under CellcountingTest/, including one
+# module per planted `#programSeal` breach in CellcountingTest/CostSealBreaches/.
+# `CellcountingTest.+` alone matches only descendants, which leaves the root
+# module `CellcountingTest` unbuildable as a `+CellcountingTest` target.
+globs = ["CellcountingTest", "CellcountingTest.+"]
+
+[[lean_lib]]
+name = "Tex2Lean"
+roots = ["Tex2Lean.RecoveryRequestsV1"]
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
